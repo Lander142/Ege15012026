@@ -1,11 +1,8 @@
-import sys
-from functools import lru_cache
-sys.setrecursionlimit(100000000)
-@lru_cache(None)
-def f(n):
-    if n == 100:
-        return 1
-    if n > 100:
-        return 0
-    return f(n+1) + f(n+2) + f(n+5) + f(n+10)
-print(f(0))
+cnt = 0
+for x1 in range(101):
+    for x2 in range(51):
+        for x5 in range(21):
+            for x10 in range(11):
+                if x1 + x2*2 + x5*5 + x10*10 == 100:
+                    cnt+=1
+print(cnt)
